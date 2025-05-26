@@ -25,3 +25,11 @@ Enable the two settings in the `/etc/ssh/sshd_config` file of the remote machine
 `debug1: remote forward failure for: listen 1234, connect localhost:5678`
 `Warning: remote port forwarding failed for listen port 1234`
 - Connection failed / This port is already in use by a ssh tunnel or similar service, make sure you don't already have a tunnel for this port
+
+`debug1: Reading configuration data /etc/ssh/ssh_config`
+`debug1: /etc/ssh/ssh_config line 19: include /etc/ssh/ssh_config.d/*.conf matched no files`
+`debug1: /etc/ssh/ssh_config line 21: Applying options for *`
+`debug1: Connecting to {REMOTE_MACHINE_IP_ADDRESS} [{REMOTE_MACHINE_IP_ADDRESS}] port 22.`
+`debug1: connect to address {REMOTE_MACHINE_IP_ADDRESS} port 22: Network is unreachable`
+`ssh: connect to host {REMOTE_MACHINE_IP_ADDRESS} port 22: Network is unreachable`
+- Might need to restart the remote machine and docker compose down -> docker compose up
