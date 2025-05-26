@@ -1,0 +1,16 @@
+services:
+  ssh-tunnel:
+    build: .
+    environment:
+      - REMOTE_USER
+      - REMOTE_SERVER
+      - REMOTE_PORT
+      - TARGET_PORT
+      - SSH_FILE_NAME
+      - SERVER_ALIVE_INTERVAL
+      - SERVER_ALIVE_COUNT
+    volumes:
+      # mount the ssh information to the docker image
+      - ${PWD}/ssh:/root/.ssh
+    network_mode: host
+    restart: unless-stopped
