@@ -11,6 +11,7 @@ This container:
 - For auto-ssh to work, you need to establish a known_hosts file, which is usually found under `~/.shh/known_hosts`. This can be done by connecting to the remote machine on your current machine, using regular ssh, and using the known_hosts file generated (if you already have a known_hosts file, you can make a backup of it and delete it to keep things simple and clean)
 - If you do not have ssh keys to use, generate them: https://docs.oracle.com/en/cloud/cloud-at-customer/occ-get-started/generate-ssh-key-pair.html
 - Once you have your known_hosts and private ssh key, move them into the ssh/ directory
+- Edit the `.env` file to match your setup
 ## remote machine
 Enable the two settings in the `/etc/ssh/sshd_config` file of the remote machine. You will either need to restart the ssh service (`sudo systemctl restart ssh`) or the remote machine for these to take affect.
 - `AllowTcpForwarding`
