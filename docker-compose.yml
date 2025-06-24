@@ -11,6 +11,6 @@ services:
       - SERVER_ALIVE_COUNT
     volumes:
       # mount the ssh information to the docker image
-      - ${PWD}/ssh:/root/.ssh
+      - ./ssh:/root/.ssh
     network_mode: host
     restart: unless-stopped
