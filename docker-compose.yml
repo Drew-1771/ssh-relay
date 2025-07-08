@@ -1,6 +1,7 @@
 services:
-  ssh-tunnel:
+  ssh-relay:
     build: .
+    container_name: "ssh-relay"
     environment:
       - REMOTE_USER
       - REMOTE_SERVER
@@ -12,5 +13,6 @@ services:
     volumes:
       # mount the ssh information to the docker image
       - ./ssh:/root/.ssh
+    # default forward traffic to the host machine
     network_mode: host
     restart: unless-stopped
